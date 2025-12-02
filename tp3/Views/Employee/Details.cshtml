@@ -1,0 +1,38 @@
+﻿@model tp3.Models.Employe
+
+@{
+    ViewData["Title"] = "Détails de l'employé";
+}
+
+<div class="container mt-4">
+    <h1>Détails de l'employé</h1>
+
+    <hr />
+
+    <div class="card">
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-3">ID</dt>
+                <dd class="col-sm-9">@Model.Id</dd>
+
+                <dt class="col-sm-3">Nom</dt>
+                <dd class="col-sm-9">@Model.Name</dd>
+
+             
+
+                <dt class="col-sm-3">Département</dt>
+                <dd class="col-sm-9">@Model.Departement</dd>
+
+                <dt class="col-sm-3">Salaire</dt>
+                <dd class="col-sm-9">@Model.Salary.ToString("C")</dd>
+
+                
+            </dl>
+        </div>
+    </div>
+
+    <div class="mt-3">
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Modifier</a>
+        <a asp-action="Index" class="btn btn-secondary">Retour à la liste</a>
+    </div>
+</div>
